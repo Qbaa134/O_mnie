@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamagotchi</title>
+    <title>Global Info Finder</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="tamagotchi-container">
-        <div class="screen">
-            <div id="message">Welcome!</div>
-            <div class="pet" id="pet">🐥</div>
-        </div>
-        <div class="buttons">
-            <button onclick="feed()">🍴 Feed</button>
-            <button onclick="play()">🎮 Play</button>
-            <button onclick="clean()">🧹 Clean</button>
-            <button onclick="heal()">💊 Heal</button>
-        </div>
+    <h1>Global Info Finder</h1>
+    <div class="form-container">
+        <input type="text" id="locationInput" placeholder="Enter a country or city...">
+        <button onclick="getLocationData()">Search</button>
     </div>
-
+    <div id="results"></div>
     <script src="script.js"></script>
 </body>
 </html>
