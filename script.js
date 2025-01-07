@@ -1,55 +1,53 @@
-body {
-    font-family: 'Courier New', monospace;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+let hunger = 50;
+let happiness = 50;
+let cleanliness = 50;
+let health = 50;
+
+function updateMessage(msg) {
+    document.getElementById('message').innerText = msg;
 }
 
-.tamagotchi-container {
-    background-color: #e0e0e0;
-    border-radius: 50%;
-    width: 300px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 5px solid #000;
+function feed() {
+    hunger -= 10;
+    if (hunger < 0) hunger = 0;
+    updateMessage("You fed your Tamagotchi!");
 }
 
-.screen {
-    background-color: #000;
-    color: #0f0;
-    width: 200px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #0f0;
-    border-radius: 10px;
-    margin-bottom: 20px;
+function play() {
+    happiness += 10;
+    if (happiness > 100) happiness = 100;
+    updateMessage("You played with your Tamagotchi!");
 }
 
-.pet {
-    font-size: 50px;
+function clean() {
+    cleanliness += 20;
+    if (cleanliness > 100) cleanliness = 100;
+    updateMessage("You cleaned up!");
 }
 
-.buttons button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
+function heal() {
+    health += 10;
+    if (health > 100) health = 100;
+    updateMessage("You healed your Tamagotchi!");
 }
 
-.buttons button:hover {
-    background-color: #0056b3;
+function checkStats() {
+    if (hunger > 100) {
+        updateMessage("Your Tamagotchi is starving!");
+    } else if (happiness < 20) {
+        updateMessage("Your Tamagotchi is sad!");
+    } else if (cleanliness < 20) {
+        updateMessage("Your Tamagotchi is dirty!");
+    } else if (health < 20) {
+        updateMessage("Your Tamagotchi is sick!");
+    }
 }
+
+setInterval(() => {
+    hunger += 5;
+    happiness -= 5;
+    cleanliness -= 5;
+    health -= 5;
+
+    checkStats();
+}, 5000);
