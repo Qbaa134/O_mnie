@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamagotchi Game</title>
+    <title>Tamagotchi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <h1>Tamagotchi</h1>
-        <div class="tamagotchi">
-            <img src="https://via.placeholder.com/150" alt="Tamagotchi" id="tama-image">
+    <div class="tamagotchi-container">
+        <div class="screen">
+            <div id="message">Welcome!</div>
+            <div class="pet" id="pet">🐥</div>
         </div>
-        <div class="stats">
-            <p>Hunger: <span id="hunger">50</span>%</p>
-            <p>Happiness: <span id="happiness">50</span>%</p>
-        </div>
-        <div class="controls">
-            <button onclick="feed()">Feed</button>
-            <button onclick="play()">Play</button>
+        <div class="buttons">
+            <button onclick="feed()">🍴 Feed</button>
+            <button onclick="play()">🎮 Play</button>
+            <button onclick="clean()">🧹 Clean</button>
+            <button onclick="heal()">💊 Heal</button>
         </div>
     </div>
 
