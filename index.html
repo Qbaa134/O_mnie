@@ -26,12 +26,10 @@
             margin-bottom: 8px;
             font-weight: bold;
         }
-        input[type="text"] {
+        input[type="file"] {
+            display: block;
             width: 100%;
-            padding: 8px;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
         .btn {
             display: block;
@@ -60,8 +58,8 @@
 
     <div class="container">
         <h1>Windows/Linux Extension Converter</h1>
-        <label for="extensionInput">Enter the file extension (without dot):</label>
-        <input type="text" id="extensionInput" placeholder="e.g., exe, txt, sh, etc.">
+        <label for="fileInput">Choose a file to convert:</label>
+        <input type="file" id="fileInput">
         <button class="btn" onclick="convertExtension()">Convert</button>
 
         <div class="result" id="result"></div>
@@ -70,7 +68,15 @@
 
     <script>
         function convertExtension() {
-            const extension = document.getElementById('extensionInput').value.trim().toLowerCase();
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert("Please select a file to convert.");
+                return;
+            }
+
+            const extension = file.name.split('.').pop().toLowerCase();
             let resultMessage = '';
             let newFileName = '';
             let newExtension = '';
