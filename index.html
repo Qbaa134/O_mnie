@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows/Linux Extension Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .download-link {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Windows/Linux Extension Converter</h1>
+        <label for="extensionInput">Enter the file extension (without dot):</label>
+        <input type="text" id="extensionInput" placeholder="e.g., exe, txt, sh, etc.">
+        <button class="btn" onclick="convertExtension()">Convert</button>
+
+        <div class="result" id="result"></div>
+        <div class="download-link" id="downloadLink"></div>
+    </div>
+
+    <script>
+        function convertExtension() {
+            const extension = document.getElementById('extensionInput').value.trim().toLowerCase();
+            let resultMessage = '';
+            let newFileName = '';
+            let newExtension = '';
+
+            // Mapping Windows extensions to Linux
+            const windowsToLinux = {
+                'exe': 'bin',
+                'bat': 'sh',
+                'dll': 'so',
+                'msi': 'deb',
+                'apk': 'tar.gz',
+                'txt': 'txt',
+                'docx': 'odt',
+                'jpg': 'jpg',
+                'png': 'png',
+                'mp4': 'mp4',
+                'zip': 'tar.gz',
+                'html': 'html',
+                'doc': 'odt',
+                'xls': 'ods',
+                'ppt': 'odp',
+                'rtf': 'rtf',
+                'pdf': 'pdf',
+                'avi': 'avi',
+                'mp3': 'mp3',
+                'wav': 'wav',
+                'csv': 'csv',
+                'json': 'json',
+                'xml': 'xml',
+                'css': 'css',
+                'js': 'js',
+                'epub': 'epub',
+                'iso': 'iso',
+                'psd': 'psd',
+                'ai': 'ai',
+                'tiff': 'tiff',
+                'flac': 'flac',
+                'ogg': 'ogg',
+                'log': 'log',
+                'sqlite': 'sqlite',
+                'tar': 'tar',
+                '7z': '7z',
+                'bak': 'bak',
+                'svg': 'svg',
+                'bmp': 'bmp',
+                'mkv': 'mkv',
+                'webm': 'webm',
+                'flv': 'flv',
+                'md': 'md',
+                'vhd': 'vhd',
+                'pkg': 'pkg',
+                'dmg': 'dmg',
+                'jar': 'jar',
+                'zipx': 'zipx',
+                'rar': 'rar',
+                'xz': 'xz',
+                '7zip': '7zip',
+                'gzip': 'gzip',
+                'tar.gz': 'tar.gz',
+                'lz': 'lz',
+                'iso': 'iso',
+                'ace': 'ace',
+                'out': 'out',
+                'ps1': 'sh',
+                'ini': 'conf',
+                'cfg': 'conf',
+                'conf': 'conf',
+                'IMG': 'img',
+                'vmdk': 'vmdk',
+                'so.dll': 'so',
+                'dB': 'db',
+                'mdb': 'mdb',
+                'accdb': 'accdb'
+            };
+
+            // Mapping Linux extensions to Windows
+            const linuxToWindows = {
+                'bin': 'exe',
+                'sh': 'bat',
+                'so': 'dll',
+                'deb': 'msi',
+                'tar.gz': 'apk',
+                'txt': 'txt',
+                'odt': 'docx',
+                'jpg': 'jpg',
+                'png': 'png',
+                'mp4': 'mp4',
+                'tar.gz': 'zip',
+                'html': 'html',
+                'ods': 'xls',
+                'odp': 'ppt',
+                'rtf': 'rtf',
+                'pdf': 'pdf',
+                'avi': 'avi',
+                'mp3': 'mp3',
+                'wav': 'wav',
+                'csv': 'csv',
+                'json': 'json',
+                'xml': 'xml',
+                'css': 'css',
+                'js': 'js',
+                'epub': 'epub',
+                'iso': 'iso',
+                'psd': 'psd',
+                'ai': 'ai',
+                'tiff': 'tiff',
+                'flac': 'flac',
+                'ogg': 'ogg',
+                'log': 'log',
+                'sqlite': 'sqlite',
+                'tar': 'tar',
+                '7z': '7z',
+                'bak': 'bak',
+                'svg': 'svg',
+                'bmp': 'bmp',
+                'mkv': 'mkv',
+                'webm': 'webm',
+                'flv': 'flv',
+                'md': 'md',
+                'vhd': 'vhd',
+                'pkg': 'pkg',
+                'dmg': 'dmg',
+                'jar': 'jar',
+                'zipx': 'zipx',
+                'rar': 'rar',
+                'xz': 'xz',
+                '7zip': '7zip',
+                'gzip': 'gzip',
+                'tar.gz': 'tar.gz',
+                'lz': 'lz',
+                'iso': 'iso',
+                'ace': 'ace',
+                'out': 'out',
+                'ps1': 'sh',
+                'ini': 'conf',
+                'cfg': 'conf',
+                'conf': 'conf',
+                'IMG': 'img',
+                'vmdk': 'vmdk',
+                'so.dll': 'so',
+                'dB': 'db',
+                'mdb': 'mdb',
+                'accdb': 'accdb'
+            };
+
+            if (windowsToLinux[extension]) {
+                newExtension = windowsToLinux[extension];
+                newFileName = `converted.${newExtension}`;
+                resultMessage = `Windows extension "${extension}" is equivalent to Linux extension "${newExtension}".`;
+            } else if (linuxToWindows[extension]) {
+                newExtension = linuxToWindows[extension];
+                newFileName = `converted.${newExtension}`;
+                resultMessage = `Linux extension "${extension}" is equivalent to Windows extension "${newExtension}".`;
+            } else {
+                resultMessage = 'Unknown extension. Please try again.';
+            }
+
+            document.getElementById('result').innerText = resultMessage;
+
+            if (newExtension) {
+                const downloadLink = document.createElement('a');
+                downloadLink.href = createFile(newFileName, newExtension);
+                downloadLink.download = newFileName;
+                downloadLink.innerText = `Download the converted file with .${newExtension} extension`;
+                document.getElementById('downloadLink').innerHTML = '';
+                document.getElementById('downloadLink').appendChild(downloadLink);
+                document.getElementById('downloadLink').style.display = 'block';
+            }
+        }
+
+        function createFile(fileName, extension) {
+            const blob = new Blob([`This is a placeholder file with a .${extension} extension`], { type: 'text/plain' });
+            return URL.createObjectURL(blob);
+        }
+    </script>
+
+</body>
+</html>
