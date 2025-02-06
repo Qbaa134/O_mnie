@@ -13,8 +13,8 @@ Z kolorową tęczą i uroczym kotkiem, to świetny sposób, by ożywić swój te
 1. **Sklonuj repozytorium** (lub pobierz skrypt):
 
    ```bash
-   git clone https://github.com/yourusername/nyan-cat-animation.git
-   cd nyan-cat-animation
+   git clone https://github.com/qbaa134/nyancat.git
+   cd nyancat
    ```
 
 2. **Nadaj skryptowi uprawnienia do wykonania**:
