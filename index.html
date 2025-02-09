@@ -35,7 +35,6 @@
         section h2 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: #f1c40f;
         }
         section p {
             font-size: 1.1em;
@@ -85,24 +84,31 @@
         .contact a:hover {
             text-decoration: underline;
         }
-        .email-container {
-            position: relative;
+        .contact-email {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            color: #f1c40f;
             display: inline-block;
-            font-size: 1.5em;
         }
-        .copy-btn {
-            position: absolute;
-            right: 0;
-            top: 0;
-            background-color: #f1c40f;
-            padding: 5px 10px;
-            font-size: 0.9em;
+        .contact-email:hover {
+            background-color: #444;
             cursor: pointer;
-            border: none;
-            border-radius: 5px;
         }
-        .copy-btn:hover {
-            background-color: #e0a800;
+        .section-box {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .section-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section-box ul li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -112,58 +118,95 @@
     </header>
 
     <section>
-        <h2>Kim jestem? 🧑‍💻</h2>
-        <p>
-            Cześć! Nazywam się Qbaa134 i jestem pasjonatem nowych technologii, elektroniki, programowania i inżynierii odwrotnej. Moje projekty obejmują różnorodne dziedziny, od programowania, przez automatykę i IoT, po drukowanie 3D, hackowanie i wiele innych. W mojej pracy staram się łączyć kreatywność z technologią, aby tworzyć rzeczy, które nie tylko działają, ale także inspirują do nowych rozwiązań. Jeśli podobnie jak ja, masz głowę pełną pomysłów i pasję do technologii, to zapraszam do dalszego zgłębiania mojego portfolio! 💻🔧🌍
-        </p>
+        <div class="section-box">
+            <h2>Kim jestem? 🧑‍💻</h2>
+            <p>
+                Cześć! Nazywam się Qbaa134 i jestem pasjonatem nowych technologii, elektroniki, programowania i inżynierii odwrotnej. Moje projekty obejmują różnorodne dziedziny, od programowania, przez automatykę i IoT, po drukowanie 3D, hackowanie i wiele innych. W mojej pracy staram się łączyć kreatywność z technologią, aby tworzyć rzeczy, które nie tylko działają, ale także inspirują do nowych rozwiązań. Jeśli podobnie jak ja, masz głowę pełną pomysłów i pasję do technologii, to zapraszam do dalszego zgłębiania mojego portfolio! 💻🔧🌍
+            </p>
+        </div>
     </section>
 
     <section>
-        <h2>Technologie, które używam 🔧</h2>
-        <p>
-            W swoich projektach korzystam z szerokiej gamy technologii, które pozwalają mi tworzyć funkcjonalne, innowacyjne i zróżnicowane rozwiązania:
-        </p>
-        <ul>
-            <li><strong>Raspberry Pi</strong>: Moje ulubione narzędzie do realizacji projektów IoT i systemów komputerowych. Raspberry Pi to komputer w miniaturze, który świetnie sprawdza się w zastosowaniach edukacyjnych i eksperymentalnych. 🖥️🐍</li>
-            <li><strong>Arduino</strong>: Świetne rozwiązanie do tworzenia różnego rodzaju urządzeń elektronicznych. Jako otwarty projekt, Arduino daje mi nieograniczone możliwości w zakresie prototypowania nowych pomysłów. 🧑‍🔬🔌</li>
-            <li><strong>ESP32 i ESP8266</strong>: Mikroprocesory z funkcją Wi-Fi i Bluetooth, które wykorzystywane są do budowy zaawansowanych urządzeń IoT. Dzięki nim mogę tworzyć inteligentne urządzenia, które komunikują się ze sobą bezprzewodowo. 📡🔋</li>
-            <li><strong>Python</strong>: Język programowania, który wykorzystywany jest w wielu moich projektach. Python jest językiem, który daje ogromne możliwości, od analizy danych, po budowanie aplikacji. 🐍📊</li>
-            <li><strong>Drukowanie 3D</strong>: Korzystam z Creality Ender-3 S1 Pro do tworzenia prototypów, modeli i obudów dla moich urządzeń. Druk 3D to nieoceniona pomoc w prototypowaniu i produkcji elementów, które pasują do moich projektów. 🖨️🔩</li>
-            <li><strong>Hackowanie i bezpieczeństwo IT</strong>: Zajmuję się także hackowaniem i analizowaniem zabezpieczeń systemów. Lubię testować różne techniki, by zwiększać bezpieczeństwo systemów komputerowych. 💻🔒</li>
-        </ul>
+        <div class="section-box">
+            <h2>Moje projekty 💥</h2>
+            <div class="content">
+                <div>
+                    <h3>Tworzenie aplikacji w AIDE</h3>
+                    <p>Moja aplikacja mobilna, stworzona w AIDE, pozwala użytkownikom na wymianę walut w prosty i szybki sposób. Aplikacja jest intuicyjna, a jej celem jest uproszczenie procesu wymiany walut w podróży. 💰📱</p>
+                </div>
+                <div>
+                    <h3>Python</h3>
+                    <p>Projekt w języku Python, który umożliwia przechwytywanie i analizowanie adresów IP i MAC w sieci lokalnej. Dzięki temu użytkownicy mogą uzyskać pełny wgląd w urządzenia podłączone do ich sieci, co jest szczególnie przydatne w kontekście bezpieczeństwa. 🔍🌐</p>
+                </div>
+                <div>
+                    <h3>IoT i Automatyzacja</h3>
+                    <p>Projekt oparty na ESP32 i Raspberry Pi, w którym buduję systemy automatyki domowej. Od zarządzania oświetleniem, po monitorowanie i kontrolowanie różnych urządzeń w domu – moim celem jest uproszczenie życia codziennego przy pomocy nowoczesnej technologii. 🏡⚙️</p>
+                </div>
+                <div>
+                    <h3>Projekty 3D</h3>
+                    <p>Wykorzystuję druk 3D do tworzenia prototypów i modeli do urządzeń elektronicznych. Często tworzę obudowy dla moich projektów, dbając o to, by były zarówno funkcjonalne, jak i estetyczne. 🖨️🔧</p>
+                </div>
+                <div>
+                    <h3>BLE (Bluetooth Low Energy)</h3>
+                    <p>Projekt, który umożliwia budowę urządzeń IoT z komunikacją BLE. Używam tego rozwiązania do monitorowania i zarządzania różnymi systemami, takimi jak urządzenia monitorujące stan zdrowia, systemy śledzenia i wiele innych. 📲🔋</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section>
-        <h2>GitHub i Blog Qbaa134 📂</h2>
-        <p>
-            Wszystkie moje projekty znajdziesz na moim <a href="https://github.com/qbaa134" target="_blank">GitHubie</a>, gdzie udostępniam kod źródłowy i dokumentację moich prac. To idealne miejsce, by zobaczyć moje podejście do tworzenia kodu i rozwiązywania problemów. 💻📈
-        </p>
-        <p>
-            Mój Blog Qbaa134 to przestrzeń, w której dzielę się doświadczeniami, rozwiązaniami problemów i inspiracjami do nowych projektów. Piszę o wszystkim, co związane z elektroniką, programowaniem, hackowaniem i bezpieczeństwem IT. Jeśli masz pytania lub pomysły na współpracę, chętnie na nie odpowiem! 📝🔗
-        </p>
+        <div class="section-box">
+            <h2>Technologie, które używam 🔧</h2>
+            <p>
+                W swoich projektach korzystam z szerokiej gamy technologii, które pozwalają mi tworzyć funkcjonalne, innowacyjne i zróżnicowane rozwiązania:
+            </p>
+            <ul>
+                <li><strong>Raspberry Pi</strong>: Moje ulubione narzędzie do realizacji projektów IoT i systemów komputerowych. Raspberry Pi to komputer w miniaturze, który świetnie sprawdza się w zastosowaniach edukacyjnych i eksperymentalnych. 🖥️🐍</li>
+                <li><strong>Arduino</strong>: Świetne rozwiązanie do tworzenia różnego rodzaju urządzeń elektronicznych. Jako otwarty projekt, Arduino daje mi nieograniczone możliwości w zakresie prototypowania nowych pomysłów. 🧑‍🔬🔌</li>
+                <li><strong>ESP32 i ESP8266</strong>: Mikroprocesory z funkcją Wi-Fi i Bluetooth, które wykorzystywane są do budowy zaawansowanych urządzeń IoT. Dzięki nim mogę tworzyć inteligentne urządzenia, które komunikują się ze sobą bezprzewodowo. 📡🔋</li>
+                <li><strong>Python</strong>: Język programowania, który wykorzystywany jest w wielu moich projektach. Python jest językiem, który daje ogromne możliwości, od analizy danych, po budowanie aplikacji. 🐍📊</li>
+                <li><strong>Drukowanie 3D</strong>: Korzystam z Creality Ender-3 S1 Pro do tworzenia prototypów, modeli i obudów dla moich urządzeń. Druk 3D to nieoceniona pomoc w prototypowaniu i produkcji elementów, które pasują do moich projektów. 🖨️🔩</li>
+                <li><strong>Hackowanie i bezpieczeństwo IT</strong>: Zajmuję się także hackowaniem i analizowaniem zabezpieczeń systemów. Lubię testować różne techniki, by zwiększać bezpieczeństwo systemów komputerowych. 💻🔒</li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>Moje plany na przyszłość 🔮</h2>
-        <p>
-            Moje plany na przyszłość są pełne ambicji i pasji. Chciałbym:
-        </p>
-        <ul>
-            <li>Rozwijać moje projekty IoT i systemy automatyki domowej, wprowadzając coraz bardziej zaawansowane rozwiązania. 🏠💡</li>
-            <li>Pracować nad zaawansowanymi aplikacjami mobilnymi i systemami sztucznej inteligencji, aby dostarczać nowe, innowacyjne funkcjonalności. 🤖📱</li>
-            <li>Kontynuować rozwój w dziedzinie inżynierii odwrotnej i hackingu, ucząc się nowych technik zabezpieczania systemów. 🔍💥</li>
-            <li>Chciałbym również nadal dzielić się moją wiedzą na blogu i GitHubie, inspirując innych do podejmowania nowych wyzwań w świecie technologii. 🌟</li>
-        </ul>
+        <div class="section-box">
+            <h2>GitHub i Blog Qbaa134 📂</h2>
+            <p>
+                Wszystkie moje projekty znajdziesz na moim GitHubie, gdzie udostępniam kod źródłowy i dokumentację moich prac. To idealne miejsce, by zobaczyć moje podejście do tworzenia kodu i rozwiązywania problemów. 💻📈
+            </p>
+            <p>
+                Mój Blog Qbaa134 to przestrzeń, w której dzielę się doświadczeniami, rozwiązaniami problemów i inspiracjami do nowych projektów. Piszę o wszystkim, co związane z elektroniką, programowaniem, hackowaniem i bezpieczeństwem IT. Jeśli masz pytania lub pomysły na współpracę, chętnie na nie odpowiem! 📝🔗
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-box">
+            <h2>Moje plany na przyszłość 🔮</h2>
+            <p>
+                Moje plany na przyszłość są pełne ambicji i pasji. Chciałbym:
+            </p>
+            <ul>
+                <li>Rozwijać moje projekty IoT i systemy automatyki domowej, wprowadzając coraz bardziej zaawansowane rozwiązania. 🏠💡</li>
+                <li>Pracować nad zaawansowanymi aplikacjami mobilnymi i systemami sztucznej inteligencji, aby dostarczać nowe, innowacyjne funkcjonalności. 🤖📱</li>
+                <li>Kontynuować rozwój w dziedzinie inżynierii odwrotnej i hackingu, ucząc się nowych technik zabezpieczania systemów. 🔍💥</li>
+                <li>Chciałbym również nadal dzielić się moją wiedzą na blogu i GitHubie, inspirując innych do podejmowania nowych wyzwań w świecie technologii. 🌟</li>
+            </ul>
+        </div>
     </section>
 
     <section class="contact">
-        <h2>Kontakt 📬</h2>
-        <p>
-            Chcesz się ze mną skontaktować lub masz pomysł na wspólny projekt? Zapraszam do kontaktu mailowego:
-        </p>
-        <div class="email-container">
-            <span>qbaa134@gmail.com 📧</span>
-            <button class="copy-btn" onclick="copyEmail()">Kopiuj e-mail</button>
+        <div class="section-box">
+            <h2>Kontakt 📬</h2>
+            <p>
+                Chcesz się ze mną skontaktować lub masz pomysł na wspólny projekt? Zapraszam do kontaktu mailowego:
+            </p>
+            <div class="contact-email" onclick="navigator.clipboard.writeText('qbaa134@gmail.com')">
+                qbaa134@gmail.com 📧
+            </div>
         </div>
     </section>
 
@@ -171,16 +214,5 @@
         <p>&copy; 2025 Qbaa134 | Wszystkie prawa zastrzeżone</p>
         <p><a href="https://github.com/qbaa134" target="_blank">GitHub</a> | <a href="https://qbaa.duckdns.org" target="_blank">Blog</a></p>
     </footer>
-
-    <script>
-        function copyEmail() {
-            const email = 'qbaa134@gmail.com';
-            navigator.clipboard.writeText(email).then(() => {
-                alert('E-mail skopiowany!');
-            }).catch(err => {
-                alert('Nie udało się skopiować e-maila');
-            });
-        }
-    </script>
 </body>
 </html>
