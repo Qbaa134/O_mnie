@@ -35,6 +35,7 @@
         section h2 {
             font-size: 2.5em;
             margin-bottom: 20px;
+            color: #f1c40f;
         }
         section p {
             font-size: 1.1em;
@@ -84,6 +85,25 @@
         .contact a:hover {
             text-decoration: underline;
         }
+        .email-container {
+            position: relative;
+            display: inline-block;
+            font-size: 1.5em;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: #f1c40f;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .copy-btn:hover {
+            background-color: #e0a800;
+        }
     </style>
 </head>
 <body>
@@ -96,32 +116,6 @@
         <p>
             Cześć! Nazywam się Qbaa134 i jestem pasjonatem nowych technologii, elektroniki, programowania i inżynierii odwrotnej. Moje projekty obejmują różnorodne dziedziny, od programowania, przez automatykę i IoT, po drukowanie 3D, hackowanie i wiele innych. W mojej pracy staram się łączyć kreatywność z technologią, aby tworzyć rzeczy, które nie tylko działają, ale także inspirują do nowych rozwiązań. Jeśli podobnie jak ja, masz głowę pełną pomysłów i pasję do technologii, to zapraszam do dalszego zgłębiania mojego portfolio! 💻🔧🌍
         </p>
-    </section>
-
-    <section>
-        <h2>Moje projekty 💥</h2>
-        <div class="content">
-            <div>
-                <h3>Tworzenie aplikacji w AIDE</h3>
-                <p>Moja aplikacja mobilna, stworzona w AIDE, pozwala użytkownikom na wymianę walut w prosty i szybki sposób. Aplikacja jest intuicyjna, a jej celem jest uproszczenie procesu wymiany walut w podróży. 💰📱</p>
-            </div>
-            <div>
-                <h3>Python</h3>
-                <p>Projekt w języku Python, który umożliwia przechwytywanie i analizowanie adresów IP i MAC w sieci lokalnej. Dzięki temu użytkownicy mogą uzyskać pełny wgląd w urządzenia podłączone do ich sieci, co jest szczególnie przydatne w kontekście bezpieczeństwa. 🔍🌐</p>
-            </div>
-            <div>
-                <h3>IoT i Automatyzacja</h3>
-                <p>Projekt oparty na ESP32 i Raspberry Pi, w którym buduję systemy automatyki domowej. Od zarządzania oświetleniem, po monitorowanie i kontrolowanie różnych urządzeń w domu – moim celem jest uproszczenie życia codziennego przy pomocy nowoczesnej technologii. 🏡⚙️</p>
-            </div>
-            <div>
-                <h3>Projekty 3D</h3>
-                <p>Wykorzystuję druk 3D do tworzenia prototypów i modeli do urządzeń elektronicznych. Często tworzę obudowy dla moich projektów, dbając o to, by były zarówno funkcjonalne, jak i estetyczne. 🖨️🔧</p>
-            </div>
-            <div>
-                <h3>BLE (Bluetooth Low Energy)</h3>
-                <p>Projekt, który umożliwia budowę urządzeń IoT z komunikacją BLE. Używam tego rozwiązania do monitorowania i zarządzania różnymi systemami, takimi jak urządzenia monitorujące stan zdrowia, systemy śledzenia i wiele innych. 📲🔋</p>
-            </div>
-        </div>
     </section>
 
     <section>
@@ -142,7 +136,7 @@
     <section>
         <h2>GitHub i Blog Qbaa134 📂</h2>
         <p>
-            Wszystkie moje projekty znajdziesz na moim GitHubie, gdzie udostępniam kod źródłowy i dokumentację moich prac. To idealne miejsce, by zobaczyć moje podejście do tworzenia kodu i rozwiązywania problemów. 💻📈
+            Wszystkie moje projekty znajdziesz na moim <a href="https://github.com/qbaa134" target="_blank">GitHubie</a>, gdzie udostępniam kod źródłowy i dokumentację moich prac. To idealne miejsce, by zobaczyć moje podejście do tworzenia kodu i rozwiązywania problemów. 💻📈
         </p>
         <p>
             Mój Blog Qbaa134 to przestrzeń, w której dzielę się doświadczeniami, rozwiązaniami problemów i inspiracjami do nowych projektów. Piszę o wszystkim, co związane z elektroniką, programowaniem, hackowaniem i bezpieczeństwem IT. Jeśli masz pytania lub pomysły na współpracę, chętnie na nie odpowiem! 📝🔗
@@ -167,12 +161,26 @@
         <p>
             Chcesz się ze mną skontaktować lub masz pomysł na wspólny projekt? Zapraszam do kontaktu mailowego:
         </p>
-        <a href="mailto:qbaa134.pl@gmail.com">Napisz do mnie!</a>
+        <div class="email-container">
+            <span>qbaa134@gmail.com 📧</span>
+            <button class="copy-btn" onclick="copyEmail()">Kopiuj e-mail</button>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2025 Qbaa134 | Wszystkie prawa zastrzeżone</p>
-        <p><a href="https://github.com/qbaa134" target="_blank">GitHub</a> | <a href="https://qbaa134.blogspot.com" target="_blank">Blog</a></p>
+        <p><a href="https://github.com/qbaa134" target="_blank">GitHub</a> | <a href="https://qbaa.duckdns.org" target="_blank">Blog</a></p>
     </footer>
+
+    <script>
+        function copyEmail() {
+            const email = 'qbaa134@gmail.com';
+            navigator.clipboard.writeText(email).then(() => {
+                alert('E-mail skopiowany!');
+            }).catch(err => {
+                alert('Nie udało się skopiować e-maila');
+            });
+        }
+    </script>
 </body>
 </html>
