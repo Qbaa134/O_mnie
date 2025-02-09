@@ -1,44 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Select all navigation links
-    const navLinks = document.querySelectorAll('#tabs a');
-    
-    // Select all sections
+    // Na początku ukryj wszystkie sekcje
     const sections = document.querySelectorAll('section');
-    
-    // Hide all sections initially
     sections.forEach(section => {
         section.style.display = 'none';
     });
-    
-    // Show the "About Me" section by default
+
+    // Pokazujemy sekcję "About Me" domyślnie
     document.querySelector('#aboutMe').style.display = 'block';
-    
-    // Event listener for tab clicks
+
+    // Dodajemy animację do zakładek
+    const navLinks = document.querySelectorAll('#tabs a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            
-            // Hide all sections
+            event.preventDefault();
+
+            // Ukrywamy wszystkie sekcje
             sections.forEach(section => {
                 section.style.display = 'none';
             });
-            
-            // Remove active class from all tabs
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            // Show the clicked section
+
+            // Pokazujemy odpowiednią sekcję
             const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.querySelector(`#${targetId}`);
-            targetSection.style.display = 'block';
-            
-            // Add active class to clicked tab
-            link.classList.add('active');
+            document.querySelector(`#${targetId}`).style.display = 'block';
         });
     });
 
-    // Contact button animation (for example)
+    // Zwiększenie interakcji z przyciskiem kontaktowym
     const contactButton = document.querySelector('#contactButton');
     contactButton.addEventListener('mouseover', () => {
         contactButton.style.transform = 'scale(1.1)';
@@ -48,18 +35,17 @@ document.addEventListener('DOMContentLoaded', function() {
         contactButton.style.transform = 'scale(1)';
     });
 
-    // Add random floating shapes
-    addRandomShapes();
+    // Dodajemy tła i kształty do strony
+    addDynamicShapes();
 });
 
-function addRandomShapes() {
-    const container = document.body;
-    const shapeColors = ['#f5a623', '#d32f2f', '#6a1b9a'];
-
-    for (let i = 0; i < 3; i++) {
-        const shape = document.createElement('div');
-        shape.classList.add('shape', `shape${i + 1}`);
-        shape.style.backgroundColor = shapeColors[i];
-        container.appendChild(shape);
-    }
+// Funkcja dodająca dynamiczne kształty
+function addDynamicShapes() {
+    const body = document.querySelector('body');
+    const shapes = ['shape1', 'shape2', 'shape3'];
+    shapes.forEach((shape, index) => {
+        const shapeDiv = document.createElement('div');
+        shapeDiv.classList.add('shape', shape);
+        body.appendChild(shapeDiv);
+    });
 }
