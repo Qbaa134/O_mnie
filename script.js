@@ -47,4 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
     contactButton.addEventListener('mouseout', () => {
         contactButton.style.transform = 'scale(1)';
     });
+
+    // Add random floating shapes
+    addRandomShapes();
 });
+
+function addRandomShapes() {
+    const container = document.body;
+    const shapeColors = ['#f5a623', '#d32f2f', '#6a1b9a'];
+
+    for (let i = 0; i < 3; i++) {
+        const shape = document.createElement('div');
+        shape.classList.add('shape', `shape${i + 1}`);
+        shape.style.backgroundColor = shapeColors[i];
+        container.appendChild(shape);
+    }
+}
