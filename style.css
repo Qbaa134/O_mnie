@@ -1,52 +1,24 @@
-/* Globalne style */
+/* Globalne ustawienia */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1d1d1d;
-    color: #fff;
+    background-color: #121212;
+    color: #eaeaea;
     overflow-x: hidden;
-    position: relative;
+    line-height: 1.6;
 }
 
-h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
+/* Tytuł główny */
+h1, h2, h3 {
     text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #f5a623;
+    font-weight: bold;
 }
 
-/* Animacja ręce i nogi */
-@keyframes mixArmsLegs {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(10deg);
-    }
-    50% {
-        transform: rotate(20deg);
-    }
-    75% {
-        transform: rotate(10deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes moveShape {
-    0% {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(20px, 20px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-/* Tło */
+/* Tło i kształty */
 #background {
     position: absolute;
     top: 0;
@@ -54,7 +26,7 @@ h1, h2, h3, p {
     width: 100%;
     height: 100%;
     z-index: -1;
-    animation: moveShape 5s ease-in-out infinite;
+    background: linear-gradient(135deg, rgba(28, 28, 28, 0.9), rgba(44, 44, 44, 0.9));
 }
 
 /* Zakładki */
@@ -62,41 +34,43 @@ h1, h2, h3, p {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px;
-    background: rgba(50, 50, 50, 0.7);
+    padding: 30px;
+    background: rgba(20, 20, 20, 0.8);
     display: flex;
     justify-content: center;
     z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
 }
 
 #tabs a {
-    color: white;
-    padding: 15px;
-    font-size: 20px;
-    margin: 0 15px;
+    color: #eaeaea;
+    font-size: 18px;
+    margin: 0 25px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
 #tabs a:hover {
     color: #f5a623;
-    transform: translateY(-5px);
+    transform: scale(1.05);
 }
 
 /* Banner */
 #banner {
-    height: 300px;
-    background: linear-gradient(45deg, #ff6f61, #ffcc00);
+    height: 350px;
+    background: #222;
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 48px;
     font-weight: bold;
-    color: white;
-    animation: mixArmsLegs 2s infinite;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
 }
 
 /* Sekcje */
@@ -104,12 +78,21 @@ section {
     display: none;
     padding: 60px 20px;
     min-height: 100vh;
-    background-color: #2c2c2c;
+    background-color: #1f1f1f;
     position: relative;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #fff;
     animation: fadeIn 1.5s ease-out;
 }
 
-/* Animacja przejścia */
+section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #f5a623;
+}
+
+/* Animacja fade-in */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -125,7 +108,7 @@ section {
     padding: 15px 30px;
     font-size: 18px;
     border-radius: 30px;
-    color: white;
+    color: #fff;
     border: none;
     margin-top: 20px;
     cursor: pointer;
@@ -137,34 +120,87 @@ section {
     transform: scale(1.1);
 }
 
-/* Dodatkowe kształty */
+/* Kształty i tło */
 .shape {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.1);
-    filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.05);
+    filter: blur(25px);
     border-radius: 50%;
+    animation: moveShape 7s ease-in-out infinite;
 }
 
 .shape1 {
-    width: 250px;
-    height: 250px;
-    top: 20%;
-    left: 10%;
-    animation: moveShape 3s ease-in-out infinite;
-}
-
-.shape2 {
-    width: 300px;
-    height: 300px;
-    top: 50%;
-    right: 10%;
+    width: 400px;
+    height: 400px;
+    top: 25%;
+    left: 5%;
     animation: moveShape 6s ease-in-out infinite;
 }
 
+.shape2 {
+    width: 500px;
+    height: 500px;
+    top: 45%;
+    right: 10%;
+    animation: moveShape 8s ease-in-out infinite;
+}
+
 .shape3 {
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 350px;
     bottom: 20%;
-    left: 40%;
-    animation: moveShape 4s ease-in-out infinite;
+    left: 35%;
+    animation: moveShape 9s ease-in-out infinite;
+}
+
+@keyframes moveShape {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(30px, -30px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Formaty treści */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container ul li {
+    padding: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #444;
+}
+
+/* Przyciski z efektem */
+button {
+    background-color: #f5a623;
+    border: none;
+    padding: 12px 25px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #d48b14;
+    transform: scale(1.1);
 }
