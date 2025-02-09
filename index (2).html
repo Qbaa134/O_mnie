@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Qbaa134's technology, programming, and hacking portfolio.">
+    <title>Qbaa134 Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #222;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .menu-toggle {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .intro {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .section {
+            padding: 60px 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 500;
+        }
+
+        .project {
+            background-color: #333;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #888;
+        }
+
+        #nav-menu {
+            display: none;
+        }
+
+        #nav-menu.active {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            nav ul {
+                display: flex;
+            }
+
+            #nav-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1>Welcome to My Portfolio! 😎🚀</h1>
+        <p>Cześć! Nazywam się Qbaa134 i jestem pasjonatem nowych technologii, elektroniki, programowania i inżynierii odwrotnej. Moje projekty obejmują różnorodne dziedziny, od programowania, przez automatykę i IoT, po drukowanie 3D, hackowanie i wiele innych. W mojej pracy staram się łączyć kreatywność z technologią, aby tworzyć rzeczy, które nie tylko działają, ale także inspirują do nowych rozwiązań. Jeśli podobnie jak ja, masz głowę pełną pomysłów i pasję do technologii, to zapraszam do dalszego zgłębiania mojego portfolio! 💻🔧🌍</p>
+    </section>
+
+    <section id="about" class="section">
+        <h2>Kim jestem? 🧑‍💻</h2>
+        <p>Jestem inżynierem, twórcą, hackerem i entuzjastą nowych technologii. Moje doświadczenie obejmuje pracę z urządzeniami takimi jak Raspberry Pi, Arduino, ESP32 i NodeMCU. Łączę elektronikę z programowaniem, budując systemy, które łączą fizyczny świat z cyfrowym. Chociaż technologia jest moją pasją, to nie boję się również zagłębiać w tematy związane z hackowaniem, bezpieczeństwem IT i inżynierią odwrotną. W mojej pracy często eksperymentuję z nowymi pomysłami i rozwiązaniami, a wszystko po to, by dostarczyć innowacyjne i funkcjonalne projekty. 🔥⚡</p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Moje projekty 💥</h2>
+        <div class="project">
+            <h3>Tworzenie aplikacji w AIDE</h3>
+            <p>Moja aplikacja mobilna, stworzona w AIDE, pozwala użytkownikom na wymianę walut w prosty i szybki sposób. Aplikacja jest intuicyjna, a jej celem jest uproszczenie procesu wymiany walut w podróży. 💰📱</p>
+        </div>
+        <div class="project">
+            <h3>Python</h3>
+            <p>Projekt w języku Python, który umożliwia przechwytywanie i analizowanie adresów IP i MAC w sieci lokalnej. Dzięki temu użytkownicy mogą uzyskać pełny wgląd w urządzenia podłączone do ich sieci, co jest szczególnie przydatne w kontekście bezpieczeństwa. 🔍🌐</p>
+        </div>
+        <div class="project">
+            <h3>IoT i Automatyzacja</h3>
+            <p>Projekt oparty na ESP32 i Raspberry Pi, w którym buduję systemy automatyki domowej. Od zarządzania oświetleniem, po monitorowanie i kontrolowanie różnych urządzeń w domu – moim celem jest uproszczenie życia codziennego przy pomocy nowoczesnej technologii. 🏡⚙️</p>
+        </div>
+        <div class="project">
+            <h3>Projekty 3D</h3>
+            <p>Wykorzystuję druk 3D do tworzenia prototypów i modeli do urządzeń elektronicznych. Często tworzę obudowy dla moich projektów, dbając o to, by były zarówno funkcjonalne, jak i estetyczne. 🖨️🔧</p>
+        </div>
+        <div class="project">
+            <h3>BLE (Bluetooth Low Energy)</h3>
+            <p>Projekt, który umożliwia budowę urządzeń IoT z komunikacją BLE. Używam tego rozwiązania do monitorowania i zarządzania różnymi systemami, takimi jak urządzenia monitorujące stan zdrowia, systemy śledzenia i wiele innych. 📲🔋</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Kontakt 📬</h2>
+        <p>Chcesz się ze mną skontaktować lub masz pomysł na wspólny projekt? Zapraszam do kontaktu mailowego:</p>
+        <p>Email: <a href="mailto:qbaa134@gmail.com">qbaa134@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>Dziękuję, że odwiedziłeś moje portfolio! Jeśli jesteś zainteresowany współpracą, masz pytania lub chcesz podzielić się swoimi pomysłami, nie wahaj się dać mi znać! Czekam na Twoje wiadomości! 🚀🎉</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
